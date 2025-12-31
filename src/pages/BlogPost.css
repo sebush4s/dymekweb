@@ -1,0 +1,152 @@
+.blog-post-container {
+    padding-top: 120px;
+    padding-bottom: 80px;
+    max-width: 800px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 30px;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: #fff;
+}
+
+.post-header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.post-header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.post-date {
+    color: var(--color-text-muted);
+    margin-bottom: 30px;
+}
+
+.post-hero-img {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.markdown-content {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #e0e0e0;
+}
+
+.markdown-content h2 {
+    font-size: 2rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: var(--color-primary);
+}
+
+.markdown-content h3 {
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.markdown-content p {
+    margin-bottom: 20px;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.markdown-content li {
+    margin-bottom: 10px;
+}
+
+.markdown-content a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.markdown-content a:hover {
+    text-decoration: underline;
+}
+
+.markdown-content blockquote {
+    border-left: 4px solid var(--color-primary);
+    padding-left: 20px;
+    font-style: italic;
+    color: var(--color-text-muted);
+    margin: 30px 0;
+}
+
+.share-section {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.share-section h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-family: var(--font-heading);
+}
+
+.share-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.share-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.3s;
+    color: #fff;
+}
+
+.share-btn:hover {
+    opacity: 0.8;
+}
+
+.share-btn.fb {
+    background-color: #3b5998;
+}
+
+.share-btn.tw {
+    background-color: #1da1f2;
+}
+
+.share-btn.copy {
+    background-color: #333;
+}
+
+.share-btn.mobile-only {
+    background-color: var(--color-primary);
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .share-btn.mobile-only {
+        display: flex;
+    }
+}

@@ -1,0 +1,293 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.header.scrolled {
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+/* CSS for Dropdown */
+.nav-item-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* Height is handled by parent stretch, but kept for safety */
+    height: 100%;
+    cursor: pointer;
+}
+
+/* Ensure hover state persists when moving to menu */
+.nav-item-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Slightly increased gap */
+    background: none;
+    border: none;
+    color: var(--color-text);
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: var(--font-subheading);
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 0;
+    height: 100%;
+    /* Make trigger ful height too for easier clicking */
+}
+
+.dropdown-trigger:hover {
+    color: var(--color-primary);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    /* Starts exactly at bottom of header */
+    left: 0;
+    background-color: rgba(26, 26, 26, 0.98);
+    /* Less transparent for readability */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0 0 4px 4px;
+    /* Rounded corners only at bottom */
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    z-index: 1001;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.dropdown-link {
+    color: #dedede;
+    text-decoration: none;
+    padding: 12px 24px;
+    font-family: var(--font-subheading);
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    display: block;
+    text-align: left;
+    border-left: 2px solid transparent;
+}
+
+.dropdown-link:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--color-primary);
+    padding-left: 28px;
+    /* Slide effect */
+    border-left-color: var(--color-primary);
+}
+
+/* Mobile Submenu */
+.mobile-nav-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.mobile-nav-item.with-icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Gap instead of space-between for consistent look */
+    justify-content: flex-start;
+    background: none;
+    border: none;
+    color: var(--color-text);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: var(--font-subheading);
+    /* Fixed font family match */
+    cursor: pointer;
+    padding: 0;
+    width: 100%;
+    text-align: left;
+}
+
+/* Standardize font for mobile items */
+.mobile-nav button {
+    font-family: var(--font-subheading);
+    font-weight: 600;
+}
+
+.chevron-icon {
+    transition: transform 0.3s ease;
+}
+
+.chevron-icon.rotate {
+    transform: rotate(180deg);
+}
+
+.mobile-submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-top: 5px;
+    border-radius: 4px;
+}
+
+.mobile-submenu.open {
+    max-height: 300px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    /* Added bottom margin */
+}
+
+.mobile-submenu a {
+    color: #ccc;
+    font-size: 1rem;
+    padding: 12px 15px;
+    width: 100%;
+    text-align: left;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    font-family: var(--font-body);
+    /* Distinct from headers */
+}
+
+.mobile-submenu a:last-child {
+    border-bottom: none;
+}
+
+.mobile-submenu a:hover {
+    color: var(--color-primary);
+    background: rgba(255, 255, 255, 0.03);
+    padding-left: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    color: var(--color-text);
+}
+
+.logo-icon {
+    color: var(--color-primary);
+    width: 32px;
+    height: 32px;
+}
+
+.desktop-nav {
+    display: flex;
+    gap: 30px;
+    height: 100%;
+    /* Use height 100% of header */
+    align-items: stretch;
+    /* Force items to fill height */
+}
+
+.desktop-nav button,
+.nav-link {
+    color: var(--color-text);
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: color 0.3s;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-family: var(--font-subheading);
+    display: flex;
+    align-items: center;
+    /* Center text vertically */
+}
+
+.desktop-nav button:hover,
+.nav-link:hover {
+    color: var(--color-primary);
+}
+
+.mobile-toggle {
+    display: none;
+    color: var(--color-text);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.mobile-nav {
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    background: var(--color-bg-light);
+    flex-direction: column;
+    padding: 30px;
+    gap: 25px;
+    display: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    height: calc(100vh - var(--header-height));
+    /* Full screen mobile menu? Optional */
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.mobile-nav.open {
+    display: flex;
+}
+
+.mobile-nav button {
+    color: var(--color-text);
+    font-size: 1.2rem;
+    text-align: left;
+    background: none;
+    border: none;
+    width: 100%;
+    padding: 0;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+
+    /* Increased breakpoint for safety */
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-toggle {
+        display: block;
+    }
+}
