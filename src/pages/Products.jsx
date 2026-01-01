@@ -13,8 +13,8 @@ const categoryMap = {
 
 const categoryTitles = {
   'longfille': 'Longfille',
-  'olejki': 'Olejki i Liquidy',
-  'urzadzenia': 'Urządzenia i Pody'
+  'olejki': 'Olejki',
+  'urzadzenia': 'Urządzenia'
 };
 
 export default function Products() {
