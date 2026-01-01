@@ -5,7 +5,7 @@
   --color-primary-hover: #b88a14;
   --color-text: #ffffff;
   --color-text-muted: #a3a3a3;
-  
+
   --font-heading: 'Oswald', sans-serif;
   --font-subheading: 'Montserrat', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -28,7 +28,12 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -72,4 +77,30 @@ button {
 
 section {
   padding: 80px 0;
+}
+
+/* Global Minimalist Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Firefox support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
 }

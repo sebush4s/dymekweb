@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import BlogList from './pages/BlogList';
 import BlogPost from './pages/BlogPost';
 import Products from './pages/Products';
+import Voting from './pages/Voting';
 import './App.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <main>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/glosowania" element={<Voting />} />
               <Route path="/blog" element={<BlogList />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
               <Route path="/products/:category" element={<Products />} />

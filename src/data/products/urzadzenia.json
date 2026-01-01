@@ -6,6 +6,37 @@
     "capacity": "N/A",
     "price": "179.00 PLN",
     "image": "https://www.ecigwizard.com/cdn/shop/files/oxva-nexlim-go-star-blue_1200x1200.png?v=1752678697",
-    "description": "Starannie zaprojektowany i solidny sprzęt, który odnajdzie się w rękach każdego użytkownika"
+    "description": "Starannie zaprojektowany i solidny sprzęt, który odnajdzie się w rękach każdego użytkownika.",
+    "specs": {
+      "Moc wyjściowa": "40W",
+      "Pojemność baterii": "1800mAh",
+      "Ładowanie": "USB Type-C, 5V/2A",
+      "Wymiary": "28.5 x 17.5 x 122 mm",
+      "Grzałki": "Seria NeXLIM"
+    },
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0502/8033/3505/files/1_cac9a29e-69b8-4b86-96a9-849d7f9962fc.avif?v=1751956792",
+      "https://cdn.shopify.com/s/files/1/0502/8033/3505/files/6_14ad66a4-44d3-4560-bfff-a656faeab50e.avif?v=1751956804"
+    ]
+  },
+  {
+    "id": "dev-2",
+    "name": "XLIM GO 2",
+    "brand": "OXVA",
+    "capacity": "N/A",
+    "price": "159.00 PLN",
+    "image": "https://cdn.shopify.com/s/files/1/0502/8033/3505/files/PIC_12_54a48535-0e97-486c-8239-544076ecf398.avif?v=1757054340",
+    "description": "Kompaktowy, nowoczesny pod, który łączy prostotę obsługi z mocą i wyjątkowym stylem.",
+    "specs": {
+      "Moc wyjściowa": "30W",
+      "Pojemność baterii": "1800mAh",
+      "Ładowanie": "USB Type-C, 5V/2A",
+      "Wymiary": "26.4 x 15 x 117,4 mm",
+      "Grzałki": "Seria XLIM"
+    },
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0502/8033/3505/files/PIC_7_606c17f6-55ed-48fa-b593-2fd8a2fbff50.avif?v=1757054339",
+      "https://cdn.shopify.com/s/files/1/0502/8033/3505/files/PIC_9_52c6ce7d-b54b-49c2-96c3-569704596744.avif?v=1757054340"
+    ]
   }
 ]

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ChevronLeft } from 'lucide-react';
+import ProductModal from '../components/ProductModal';
 import './Products.css';
 
 // Map slugs to file names
@@ -19,6 +20,7 @@ const categoryTitles = {
 export default function Products() {
   const { category } = useParams();
   const [products, setProducts] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
@@ -55,14 +57,14 @@ export default function Products() {
   return (
     <div className="container products-page">
       <div className="products-header">
-         <Link to="/" className="back-link">
+        <Link to="/" className="back-link">
           <ChevronLeft size={20} /> Strona główna
         </Link>
         <h1>{title}</h1>
       </div>
 
       {loading && <div className="loading-state">Ładowanie produktów...</div>}
-      
+
       {error && (
         <div className="error-state">
           <h2>Nie znaleziono kategorii lub wystąpił błąd.</h2>
@@ -76,6 +78,32 @@ export default function Products() {
             <div key={product.id} className="product-card">
               <div className="product-image-container">
                 <img src={product.image} alt={product.name} loading="lazy" />
+
+                {/* Badges Rendering */}
+                {product.badges && (
+                  <div className="product-badges">
+                    {(Array.isArray(product.badges) ? product.badges : [product.badges]).map((badge, index) => {
+                      // Normalize badge text for class name (remove polish chars, lowercase)
+                      const badgeClass = badge
+                        .toLowerCase()
+                        .replace(/ć/g, 'c')
+                        .replace(/ś/g, 's')
+                        .replace(/ł/g, 'l')
+                        .replace(/ó/g, 'o')
+                        .replace(/ę/g, 'e')
+                        .replace(/ą/g, 'a')
+                        .replace(/ż/g, 'z')
+                        .replace(/ź/g, 'z')
+                        .replace(/ń/g, 'n');
+
+                      return (
+                        <span key={index} className={`product-badge badge-${badgeClass}`}>
+                          {badge}
+                        </span>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
               <div className="product-info">
                 <span className="product-brand">{product.brand}</span>
@@ -85,12 +113,30 @@ export default function Products() {
                   {product.capacity && product.capacity !== 'N/A' && (
                     <span className="product-capacity">{product.capacity}</span>
                   )}
-                  <span className="product-price">{product.price}</span>
+                  <div className="price-container">
+                    {product.oldPrice && (
+                      <span className="product-old-price">{product.oldPrice}</span>
+                    )}
+                    <span className={`product-price ${product.oldPrice ? 'price-promotional' : ''}`}>{product.price}</span>
+                  </div>
                 </div>
+                <button
+                  className="quick-view-btn"
+                  onClick={() => setSelectedProduct(product)}
+                >
+                  Szybki podgląd
+                </button>
               </div>
             </div>
           ))}
         </div>
+      )}
+
+      {selectedProduct && (
+        <ProductModal
+          product={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+        />
       )}
     </div>
   );

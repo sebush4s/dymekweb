@@ -9,7 +9,6 @@ export default function Footer() {
                 <div className="footer-column">
                     <h4 className="footer-heading">DYMEK</h4>
                     <p className="footer-desc">
-                        Twoje sprawdzone centrum tytoniowe.<br />
                         Najlepsza jakość, szeroki wybór i fachowe doradztwo w Twojej okolicy.
                     </p>
                 </div>

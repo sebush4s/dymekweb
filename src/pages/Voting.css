@@ -1,0 +1,192 @@
+.voting-page {
+    padding-top: 120px;
+    padding-bottom: 80px;
+    text-align: center;
+}
+
+.voting-header {
+    margin-bottom: 60px;
+}
+
+.voting-header h1 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+.versus-container {
+    background: #1e1e1e;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.battle-title {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    color: #fff;
+    font-family: var(--font-heading);
+}
+
+.competitors-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.versus-badge {
+    background: var(--color-primary);
+    color: #000;
+    font-weight: 800;
+    font-style: italic;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(212, 160, 23, 0.4);
+    z-index: 2;
+}
+
+.competitor {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.competitor-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 4px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    background: #252525;
+}
+
+.competitor-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.competitor.selected .competitor-image {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 30px rgba(212, 160, 23, 0.2);
+}
+
+.vote-badge {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-primary);
+    color: #000;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.competitor h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.competitor p {
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+.vote-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 12px 40px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 140px;
+}
+
+.vote-btn:hover:not(:disabled) {
+    background: var(--color-primary);
+    color: #000;
+    border-color: var(--color-primary);
+    transform: scale(1.05);
+}
+
+.vote-btn:disabled {
+    cursor: default;
+    background: transparent;
+    border-color: transparent;
+    font-size: 2rem;
+    color: var(--color-primary);
+}
+
+/* Results Bar */
+.results-bar-container {
+    height: 40px;
+    background: #333;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    margin-top: 20px;
+}
+
+.result-segment {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 1s ease-in-out;
+}
+
+.result-segment span {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    padding: 0 10px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .competitors-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .versus-badge {
+        margin: -15px 0;
+    }
+
+    .competitor-image {
+        width: 150px;
+        height: 150px;
+    }
+}

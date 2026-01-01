@@ -64,10 +64,15 @@ export default function Header() {
               <Link to="/products/urzadzenia" className="dropdown-link">Urządzenia</Link>
             </div>
           </div>
-          <button onClick={() => scrollToSection('offer')}>Oferta</button>
-          <button onClick={() => scrollToSection('locations')}>Lokalizacje</button>
-          <Link to="/blog" className="nav-link">Blog</Link>
-          <button onClick={() => scrollToSection('contact')}>Kontakt</button>
+          <button onClick={() => scrollToSection('offer')} className="nav-link">Oferta</button>
+          <button onClick={() => scrollToSection('locations')} className="nav-link">Lokalizacje</button>
+          <Link to="/glosowania" className={`nav-link ${location.pathname === '/glosowania' ? 'active' : ''}`}>
+            Głosowania
+          </Link>
+          <Link to="/blog" className={`nav-link ${location.pathname.startsWith('/blog') ? 'active' : ''}`}>
+            Blog
+          </Link>
+          <button onClick={() => scrollToSection('contact')} className="nav-link contact-btn">Kontakt</button>
         </nav>
 
         <button className="mobile-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
@@ -90,6 +95,7 @@ export default function Header() {
           </div>
           <button onClick={() => scrollToSection('offer')}>Oferta</button>
           <button onClick={() => scrollToSection('locations')}>Lokalizacje</button>
+          <Link to="/glosowania" onClick={closeMobileMenu}>Głosowania</Link>
           <Link to="/blog" onClick={closeMobileMenu}>Blog</Link>
           <button onClick={() => scrollToSection('contact')}>Kontakt</button>
         </div>

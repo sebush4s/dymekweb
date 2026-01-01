@@ -231,7 +231,7 @@
     font-family: var(--font-subheading);
     display: flex;
     align-items: center;
-    /* Center text vertically */
+    text-decoration: none;
 }
 
 .desktop-nav button:hover,

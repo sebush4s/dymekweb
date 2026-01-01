@@ -5,7 +5,28 @@
     "brand": "OXVA",
     "capacity": "10ml",
     "price": "25 PLN",
-    "image": "https://shishasklep.pl/hpeciai/118eeccc19ee73899b92ca9b082fff88/pol_pl_Longfill-OX-Passion-10-60-Lychee-Raspberry-49029_3.webp",
-    "description": "Marka, która od lat zdobywa uznanie wśród użytkowników e-papierosów na całym świecie."
+    "oldPrice": "40 PLN",
+    "image": "https://e-papierosy.pl/media/cache/b2c1_view_photo_browser_product_item_large/assets/default/photos/longfill-oxva-ox-passion-10-60-lemon-mint-mojito-720b3ced410f4239928022283ff9b452-de13e6a3.jpg",
+    "description": "Marka, która od lat zdobywa uznanie wśród użytkowników e-papierosów na całym świecie.",
+    "badges": [
+      "Nowość",
+      "Promocja"
+    ],
+    "flavors": [
+      "Aloe Watermelon",
+      "Blueberry Candy",
+      "Cherry Rasp Ice Tea",
+      "Lemon Mint Mojito",
+      "Lychee Ice Tea",
+      "Lychee Raspberry",
+      "Peach Mojito",
+      "Sour Strawmelon",
+      "Sour Trio Berries",
+      "Straw Razz Ice Tea"
+    ],
+    "gallery": [
+      "https://shishasklep.pl/hpeciai/f446edc44357af04c60aba97ab18f9c8/pol_pl_Longfill-OX-Passion-10-60-Lychee-Ice-Tea-49028_3.webp",
+      "https://e-papierosy.pl/media/cache/b2c1_view_photo_browser_product_item_large/assets/default/photos/longfill-oxva-ox-passion-10-60-peach-mojito-326575dba5cb452fb8c45cc05be3b578-e39c4d58.jpg"
+    ]
   }
 ]
